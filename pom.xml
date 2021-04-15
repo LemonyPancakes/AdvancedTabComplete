@@ -6,10 +6,10 @@
 
     <groupId>me.swagpancakes</groupId>
     <artifactId>advancedtabcomplete</artifactId>
-    <version>Build 1</version>
+    <version>Build 2</version>
     <packaging>jar</packaging>
 
-    <name>Advancedtabcomplete</name>
+    <name>AdvancedTabComplete</name>
 
     <description>Custom Permission/Group Based Tab Completer.</description>
     <properties>

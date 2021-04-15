@@ -4,11 +4,10 @@ import me.swagpancakes.advancedtabcomplete.AdvancedTabComplete;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.event.Listener;
 
-public class MainCommand implements CommandExecutor, Listener {
+public class MainCommand implements CommandExecutor {
 
-    private final AdvancedTabComplete plugin;
+    private AdvancedTabComplete plugin;
 
     public MainCommand(AdvancedTabComplete plugin){
         plugin.getCommand("atc").setExecutor(this);

@@ -8,7 +8,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandSendEvent;
 
 public class TabComplete implements Listener {
-    AdvancedTabComplete plugin = AdvancedTabComplete.getPlugin(AdvancedTabComplete.class);
+
+    private AdvancedTabComplete plugin;
+
+    public TabComplete(AdvancedTabComplete plugin){
+        this.plugin = plugin;
+    }
 
     @EventHandler (priority = EventPriority.HIGHEST)
     public void onCommandSendEvent(PlayerCommandSendEvent event) {

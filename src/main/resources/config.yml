@@ -1,5 +1,10 @@
 #AdvancedTabComplete
 #Thanks for using my plugin :> Make sure to rate 5 stars on SpigotMC :>
+updates:
+  #If set to true, update notifications will be enabled.
+  #If set to false, update notifications will be disabled.
+  notifications: true
+
 lang:
   usage: "&9Info>&7 Usage: &c/atc reload"
   no-permission: "&cError>&7 You don't have permission to use this command."
