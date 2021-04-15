@@ -15,6 +15,7 @@ public class TabComplete implements Listener {
         Player player = event.getPlayer();
 
         if (!plugin.getConfig().getBoolean("bypass.enable-bypass")){
+            event.getCommands().clear();
             plugin.getConfig().getConfigurationSection("groups").getKeys(false).forEach(key ->{
                 if (player.hasPermission(plugin.getConfig().getString("groups." + key + ".permission"))){
                     if (plugin.getConfig().getString("groups." + key + ".mode").equalsIgnoreCase("whitelist")){
@@ -28,6 +29,7 @@ public class TabComplete implements Listener {
             });
         }else{
             if (!player.hasPermission(plugin.getConfig().getString("bypass.bypass-permission"))){
+                event.getCommands().clear();
                 plugin.getConfig().getConfigurationSection("groups").getKeys(false).forEach(key -> {
                     if (player.hasPermission(plugin.getConfig().getString("groups." + key + ".permission"))) {
                         if (plugin.getConfig().getString("groups." + key + ".mode").equalsIgnoreCase("whitelist")){
