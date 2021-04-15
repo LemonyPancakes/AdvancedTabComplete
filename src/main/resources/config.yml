@@ -1,0 +1,38 @@
+#AdvancedTabComplete
+#Thanks for using my plugin :> Make sure to rate 5 stars on SpigotMC :>
+lang:
+  usage: "&9Info>&7 Usage: &c/atc reload"
+  no-permission: "&cError>&7 You don't have permission to use this command."
+  reloaded: "&9Info>&a AdvancedTabComplete config reloaded."
+
+bypass:
+  #If set to true, bypass will be enabled.
+  #If set to false, bypass wil be disabled.
+  enable-bypass: false
+  #The permission of the bypass.
+  #You can set your custom permission here.
+  bypass-permission: "atc.bypass"
+
+#The groups.
+groups:
+  default:
+    #The permission.
+    permission: "my.permission"
+    #If the value is blacklist, the commands in the "commands" list are blocked.
+    #If the value is whitelist, the commands in the "commands" list are the only ones that will be shown when player tab-completes.
+    mode: whitelist
+    #The list of commands that will be removed from the tab-complete or only visible.
+    commands:
+      - spawn
+      - warps
+      - warp
+      - kit
+
+  admin:
+    permission: "admin.permission"
+    mode: whitelist
+    commands:
+      - ban
+      - kick
+
+  #You can add infinite groups here, just copy and paste the format above.

@@ -1,0 +1,9 @@
+name: AdvancedTabComplete
+version: ${project.version}
+main: me.swagpancakes.advancedtabcomplete.AdvancedTabComplete
+api-version: 1.16
+authors: [ SwagPancakes ]
+description: Custom Permission/Group Based Tab Completer.
+
+commands:
+  atc:
