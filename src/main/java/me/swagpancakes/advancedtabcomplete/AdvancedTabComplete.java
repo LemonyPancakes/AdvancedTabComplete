@@ -11,6 +11,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class AdvancedTabComplete extends JavaPlugin {
 
     public static Boolean update, checkUpdate;
@@ -19,6 +22,8 @@ public final class AdvancedTabComplete extends JavaPlugin {
     public static String downloadLink = "https://www.spigotmc.org/resources/" + resourceID + "/";
     public String version = getDescription().getVersion();
 
+    public List<String> cache;
+
     public ConfigHandler configHandler = new ConfigHandler(this);
 
     public YamlConfiguration config = new YamlConfiguration();
@@ -26,6 +31,8 @@ public final class AdvancedTabComplete extends JavaPlugin {
     @Override
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[AdvancedTabComplete] Plugin has been enabled!");
+
+        cache = new ArrayList<>();
 
         registerCommands();
         registerListeners();

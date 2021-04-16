@@ -6,7 +6,7 @@
 
     <groupId>me.swagpancakes</groupId>
     <artifactId>advancedtabcomplete</artifactId>
-    <version>Build 3</version>
+    <version>Build 4</version>
     <packaging>jar</packaging>
 
     <name>AdvancedTabComplete</name>

@@ -1,6 +1,7 @@
 package me.swagpancakes.advancedtabcomplete.Listeners;
 
 import me.swagpancakes.advancedtabcomplete.AdvancedTabComplete;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -19,6 +20,7 @@ public class TabComplete implements Listener {
     @EventHandler (priority = EventPriority.HIGHEST)
     public void onCommandSendEvent(PlayerCommandSendEvent event) {
         Player player = event.getPlayer();
+        plugin.cache.clear();
 
         if (!plugin.getConfig().getBoolean("bypass.enable-bypass")){
             event.getCommands().clear();
@@ -26,10 +28,12 @@ public class TabComplete implements Listener {
                 if (player.hasPermission(plugin.getConfig().getString("groups." + key + ".permission"))){
                     if (plugin.getConfig().getString("groups." + key + ".mode").equalsIgnoreCase("whitelist")){
                         event.getCommands().clear();
-                        event.getCommands().addAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                        plugin.cache.addAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                        event.getCommands().addAll(plugin.cache);
                     }else if (plugin.getConfig().getString("groups." + key + ".mode").equalsIgnoreCase("blacklist")){
                         event.getCommands().clear();
-                        event.getCommands().removeAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                        plugin.cache.addAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                        event.getCommands().removeAll(plugin.cache);
                     }
                 }
             });
@@ -40,10 +44,12 @@ public class TabComplete implements Listener {
                     if (player.hasPermission(plugin.getConfig().getString("groups." + key + ".permission"))) {
                         if (plugin.getConfig().getString("groups." + key + ".mode").equalsIgnoreCase("whitelist")){
                             event.getCommands().clear();
-                            event.getCommands().addAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                            plugin.cache.addAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                            event.getCommands().addAll(plugin.cache);
                         }else if (plugin.getConfig().getString("groups." + key + ".mode").equalsIgnoreCase("blacklist")){
                             event.getCommands().clear();
-                            event.getCommands().removeAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                            plugin.cache.addAll(plugin.getConfig().getStringList("groups." + key + ".commands"));
+                            event.getCommands().removeAll(plugin.cache);
                         }
                     }
                 });
