@@ -12,6 +12,7 @@ public class TabComplete implements Listener {
     private AdvancedTabComplete plugin;
 
     public TabComplete(AdvancedTabComplete plugin){
+        plugin.getServer().getPluginManager().registerEvents(this, plugin);
         this.plugin = plugin;
     }
 
