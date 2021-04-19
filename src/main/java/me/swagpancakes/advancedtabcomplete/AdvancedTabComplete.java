@@ -51,7 +51,7 @@ public final class AdvancedTabComplete extends JavaPlugin {
 
     public void registerListeners(){
         if (configHandler.getSettings().getBoolean("settings.async")){
-            new AsyncTabComplete(this);
+            new NonAsyncTabComplete(this);
             Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[AdvancedTabComplete] Running the plugin on " + ChatColor.YELLOW + "ASYNC MODE");
         }else{
             new NonAsyncTabComplete(this);
