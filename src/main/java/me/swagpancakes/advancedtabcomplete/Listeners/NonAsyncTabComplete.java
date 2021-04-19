@@ -1,18 +1,17 @@
 package me.swagpancakes.advancedtabcomplete.Listeners;
 
 import me.swagpancakes.advancedtabcomplete.AdvancedTabComplete;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandSendEvent;
 
-public class TabComplete implements Listener {
+public class NonAsyncTabComplete implements Listener {
 
     private AdvancedTabComplete plugin;
 
-    public TabComplete(AdvancedTabComplete plugin){
+    public NonAsyncTabComplete(AdvancedTabComplete plugin){
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
         this.plugin = plugin;
     }
@@ -55,7 +54,5 @@ public class TabComplete implements Listener {
                 });
             }
         }
-
     }
-
 }

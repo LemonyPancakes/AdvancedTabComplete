@@ -20,7 +20,7 @@ public class MainCommand implements CommandExecutor {
             if (args.length == 1) {
                 switch (args[0].toUpperCase()) {
                     case "RELOAD":
-                        plugin.reloadConfig();
+                        plugin.configHandler.saveFiles();
                         sender.sendMessage(plugin.getConfig().getString("lang.reloaded").replaceAll("&", "§"));
                         return false;
                 }
